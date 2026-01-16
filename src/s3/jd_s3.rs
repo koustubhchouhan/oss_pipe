@@ -7,9 +7,12 @@ use async_trait::async_trait;
 use aws_sdk_s3::primitives::ByteStream;
 use aws_sdk_s3::Client;
 use bytes::Bytes;
-use std::fs::OpenOptions;
-use std::io::{LineWriter, Write};
+use futures::io::LineWriter;
+use futures::AsyncWriteExt as _;
 use std::path::Path;
+use tokio::fs::OpenOptions;
+use tokio::io::AsyncWriteExt as _;
+use tokio_util::compat::TokioAsyncWriteCompatExt as _;
 
 pub struct OssJdClient {
     pub client: Client,
@@ -95,21 +98,24 @@ impl OSSActions for OssJdClient {
         let path = std::path::Path::new(store_path);
 
         if let Some(p) = path.parent() {
-            std::fs::create_dir_all(p)?;
+            tokio::fs::create_dir_all(p).await?;
         };
         let file_ref = OpenOptions::new()
             .create(true)
             .write(true)
             .append(true)
-            .open(file_path.clone())?;
+            .open(file_path.clone())
+            .await?
+            .compat_write();
+
         let mut file = LineWriter::new(file_ref);
         for o in r.contents() {
             if let Some(s) = o.key() {
-                let _ = file.write_all(s.as_bytes());
-                let _ = file.write_all("\n".as_bytes());
+                let _ = file.write_all(s.as_bytes()).await;
+                let _ = file.write_all("\n".as_bytes()).await;
             }
         }
-        file.flush()?;
+        file.flush().await?;
 
         return match r.next_continuation_token() {
             Some(str) => Ok(Some(str.to_string())),
@@ -141,14 +147,17 @@ impl OSSActions for OssJdClient {
             .create(true)
             .write(true)
             .append(true)
-            .open(file_path.clone())?;
+            .open(file_path)
+            .await?
+            .compat_write();
+
         let mut file = LineWriter::new(file_ref);
         if let Some(objects) = resp.object_list {
             for item in objects.iter() {
-                let _ = file.write_all(item.as_bytes());
-                let _ = file.write_all("\n".as_bytes());
+                let _ = file.write_all(item.as_bytes()).await;
+                let _ = file.write_all("\n".as_bytes()).await;
             }
-            file.flush()?;
+            file.flush().await?;
         }
 
         while !token.is_none() {
@@ -157,10 +166,10 @@ impl OSSActions for OssJdClient {
                 .await?;
             if let Some(objects) = resp.object_list {
                 for item in objects.iter() {
-                    let _ = file.write_all(item.as_bytes());
-                    let _ = file.write_all("\n".as_bytes());
+                    let _ = file.write_all(item.as_bytes()).await;
+                    let _ = file.write_all("\n".as_bytes()).await;
                 }
-                file.flush()?;
+                file.flush().await?;
             }
             token = resp.next_token;
         }
@@ -199,9 +208,11 @@ impl OSSActions for OssJdClient {
             .write(true)
             .truncate(true)
             .create(true)
-            .open(store_path)?;
-        let _ = file.write(&*bytes);
-        file.flush()?;
+            .open(store_path)
+            .await?;
+
+        let _ = file.write(&*bytes).await;
+        file.flush().await?;
         Ok(())
     }
 
@@ -238,9 +249,11 @@ impl OSSActions for OssJdClient {
                 .write(true)
                 .truncate(true)
                 .create(true)
-                .open(store_path)?;
-            let _ = file.write(&*bytes);
-            file.flush()?;
+                .open(store_path)
+                .await?;
+
+            let _ = file.write(&*bytes).await;
+            file.flush().await?;
         }
         Ok(())
     }
